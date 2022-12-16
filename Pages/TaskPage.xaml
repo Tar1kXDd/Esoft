@@ -1,0 +1,30 @@
+﻿<Page x:Class="Esoft.Pages.TaskPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TaskPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <DataGrid Background="Azure" x:Name="DataGridTask" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="ClickTask">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Binding="{Binding Title}" Header="Название"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Description}" Header="Описание"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Status}" Header="Статус"/>
+                <DataGridTextColumn Width="*" Binding="{Binding WorkType}" Header="Тип"/>
+                <DataGridTextColumn Width="*" Binding="{Binding CreateDateTime}" Header="Время создания"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Deadline}" Header="Крайний срок"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Difficulty }" Header="Сложность"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Time}" Header="Время"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" Background="Blue" Margin="10" Width="200" Content="Добавить" Click="AddTask"/>
+    </Grid>
+</Page>
